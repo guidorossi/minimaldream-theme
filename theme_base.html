@@ -9,7 +9,7 @@
 -->
 <head>
         <meta charset="utf-8">
-        <title>{Title}{block:PreviousPage} | Page {CurrentPage} of {TotalPages}{/block:PreviousPage}{block:TagPage} #{Tag}{/block:TagPage}</title>
+        <title>{Title}{block:PostSummary} | {PostSummary}{/block:PostSummary}{block:PreviousPage} | Page {CurrentPage} of {TotalPages}{/block:PreviousPage}{block:TagPage} | #{Tag}{/block:TagPage}</title>
         <link rel="shortcut icon" href="{Favicon}">
         <link rel="alternate" type="application/rss+xml" href="{RSS}">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
@@ -25,6 +25,8 @@
         	<meta name="color:Header Background" content="#fff"/>
         	<meta name="color:Body Background" content="#eee"/>
         	<meta name="color:Articles Background" content="#fff"/>
+        	<meta name="color:Font Color" content="#777"/>
+        	<meta name="color:Links Color" content="#6699cc"/>
   				
 <style type="text/css">
 
@@ -35,7 +37,7 @@ body {
 	font: normal 16px/22px 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size:18px;
 	font-weight: 400;
-	color: #777;
+	color: {color:Font Color};
 	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 	-webkit-text-size-adjust: 100%;
 	background-color:{color:Body Background};
@@ -61,7 +63,7 @@ header{
 }
 
 header a, header a:hover{
-	color: #777;
+	color: {color:Font Color};
 }
 
 h1 a, h1 a:hover{
@@ -129,7 +131,7 @@ article, .date{
 }
 
 article a, article a:hover, .date a, .date a:hover{
-	color:#6699cc;
+	color:{color:Link Color};
 }
 
 article h3 a, article h3 a:hover{
@@ -154,7 +156,7 @@ article.post.video .videop{
 
 article.post.link a, article.post.link a:hover{
 	text-decoration:none;
-	color:#6699cc;
+	color:{color:Link Color};
 	border-bottom: 1px solid #ddd;
 	font-size:25px;
 }
@@ -177,7 +179,7 @@ article.post.quote .fa{
 
 article.post.quote .source{
 	font-style: italic;
-	color:#6699cc;
+	color:{color:Link Color};
 	padding:15px;
 }
 
@@ -217,7 +219,7 @@ article.post.quote .source{
 
 #notes-perma a, #notes-perma a:hover{
 	text-decoration:none;
-	color:#6699cc;
+	color:{color:Link Color};
 }
 
 #notes-perma img{
@@ -260,7 +262,7 @@ footer p{
 
 footer a, footer a:hover{
 	text-decoration:none;
-	color:#6699cc;
+	color:{color:Link Color};
 }
 
 .fa-heart:hover{
