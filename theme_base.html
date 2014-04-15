@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+
+<html>
+<!-- 
+  Theme Author: Guido Rossi  [http://www.guidorossi.com.ar/]
+  For: Tumblr  [http://tumblr.com/]
+  Terms: MIT License [http://opensource.org/licenses/MIT]
+  Sources: https://github.com/guidorossi/minimaldream-theme
+-->
+<head>
+        <meta charset="utf-8">
+        <title>{Title}{block:PreviousPage} | Page {CurrentPage} of {TotalPages}{/block:PreviousPage}{block:TagPage} #{Tag}{/block:TagPage}</title>
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <!--[if lt IE 9]>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script>
+        <![endif]-->
+        {block:Description}
+            <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+        	<meta name="text:Twitter Username" content=""/>
+        	<meta name="text:Instagram Username" content=""/>
+        	<meta name="text:Github Username" content=""/>
+        	<meta name="color:Header Background" content="#fff"/>
+        	<meta name="color:Body Background" content="#eee"/>
+        	<meta name="color:Articles Background" content="#fff"/>
+  				
+<style type="text/css">
+
+body {
+	line-height: 1;
+	margin:0;
+	padding:0;
+	font: normal 16px/22px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size:18px;
+	font-weight: 400;
+	color: #777;
+	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+	-webkit-text-size-adjust: 100%;
+	background-color:{color:Body Background};
+		
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+header{
+	padding:20px 0 10px 0;
+	text-align:center;
+	margin:0 0 30px 0;
+	background-color:{color:Header Background};
+}
+
+header a, header a:hover{
+	color: #777;
+}
+
+h1 a, h1 a:hover{
+	text-decoration:none;
+	border-bottom: 1px solid #ddd;
+	font-size:30px;
+}
+
+#blog-description{
+	width:800px;
+	margin-top:20px;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+#nav{
+	margin-top:30px;
+	padding-bottom:20px;
+}
+
+#nav a, #nav a:hover{
+	margin-left:15px;
+}
+
+#social{
+	font-size:25px;
+	display:inline;
+}
+
+.fa-twitter, .fa-instagram, .fa-github-alt{
+	-webkit-transition: color 0.2s ease-out;
+	-moz-transition: color 0.2s ease-out;
+	transition: color 0.2s ease-out;
+}
+
+.fa-twitter:hover{
+	color:#4099FF;
+	-webkit-transition: color 0.2s ease-in;
+	-moz-transition: color 0.2s ease-in;
+	transition: color 0.2s ease-in;
+}
+
+.fa-instagram:hover{
+	color:#3f729b;
+	-webkit-transition: color 0.2s ease-in;
+	-moz-transition: color 0.2s ease-in;
+	transition: color 0.2s ease-in;
+}
+
+.fa-github-alt:hover{
+	color:#000;
+	-webkit-transition: color 0.2s ease-in;
+	-moz-transition: color 0.2s ease-in;
+	transition: color 0.2s ease-in;
+}
+
+article, .date{
+	margin-left: auto;
+    margin-right: auto;
+	margin-top:60px;
+	background-color:{color:Articles Background};
+	padding:15px;
+	width:800px;
+	line-height:130%;
+}
+
+article a, article a:hover, .date a, .date a:hover{
+	color:#6699cc;
+}
+
+article h3 a, article h3 a:hover{
+	text-decoration:none;
+	border-bottom: 1px solid #ddd;
+	font-size:25px;
+}
+
+article.post.text .post-inner{
+	line-height:150%;
+}
+
+article.post.photo img{
+	max-width: 100%;
+	display: block;
+	margin: auto;
+}
+
+article.post.video .videop{
+	text-align:center;
+}
+
+article.post.link a, article.post.link a:hover{
+	text-decoration:none;
+	color:#6699cc;
+	border-bottom: 1px solid #ddd;
+	font-size:25px;
+}
+
+article.post.link .description a, article.post.link .description a:hover{
+	font-size:18px;
+}
+
+article.post.quote p{
+	font-size:35px;
+	display:inline;
+	padding:10px;
+}
+
+article.post.quote .fa{
+	font-size:28px;
+	vertical-align:text-top;
+	margin:0 10px 0 10px;
+}
+
+article.post.quote .source{
+	font-style: italic;
+	color:#6699cc;
+	padding:15px;
+}
+
+.date{
+	margin-top:2px;
+	padding-top:20px;
+	padding-bottom:20px;
+}
+
+.notes-info{
+	margin-left:25px;
+}
+
+.notes-info a, .notes-info a:hover, .date-info a, .date-info a:hover, .tags a, .tags a:hover{
+	text-decoration:none;
+	border-bottom: 1px solid #ddd;
+}
+
+.tags{
+	margin-left:30px;
+}
+
+.tags a, .tags a:hover{
+	margin-left:5px;
+}
+
+#notes-perma{
+	margin-left: auto;
+    margin-right: auto;
+	margin-top:2px;
+	padding:15px;
+	width:800px;
+	line-height:150%;
+	font-size:15px;
+	background-color:{color:Articles Background};
+}
+
+#notes-perma a, #notes-perma a:hover{
+	text-decoration:none;
+	color:#6699cc;
+}
+
+#notes-perma img{
+	padding:3px;
+}
+
+#notes-perma blockquote a, #notes-perma blockquote a:hover{
+	font-style: italic;
+}
+
+footer{
+	margin-left: auto;
+    margin-right: auto;
+	margin-top:10px;
+	padding:15px;
+	width:800px;
+	line-height:150%;
+	font-size:20px;
+}
+
+footer p{
+	display:inline;
+}
+
+.prev-link{
+	float:left;
+}
+
+.next-link{
+	float:right;
+}
+
+.next-link, .prev-link{
+	padding:5px;
+	background-color:{color:Articles Background};
+	-webkit-border-radius: 50px; /* Saf3+, Chrome */
+	border-radius: 50px; /* Opera 10.5, IE 9 */
+	/*-moz-border-radius: 30px;  Disabled for FF1+ */
+}
+
+footer a, footer a:hover{
+	text-decoration:none;
+	color:#6699cc;
+}
+
+.fa-heart:hover{
+	color:red;
+	-webkit-transition: color 0.2s ease-in;
+	-moz-transition: color 0.2s ease-in;
+	transition: color 0.2s ease-in;
+}
+
+.fa-heart{
+	-webkit-transition: color 0.2s ease-out;
+	-moz-transition: color 0.2s ease-out;
+	transition: color 0.2s ease-out;
+}
+
+
+.avatar-frame{border: 2px solid #fff;}
+.avatar-frame,.avatar-frame img{
+	-webkit-border-radius: 100px; /* Saf3+, Chrome */
+	border-radius: 100px; /* Opera 10.5, IE 9 */
+	/*-moz-border-radius: 30px;  Disabled for FF1+ */
+	}
+	
+#made-by{
+	clear:both;
+	text-align:center;
+	font-size:15px;
+}
+
+#made-by a, #made-by a:hover{
+	text-decoration:none;
+	border-bottom: 1px solid #ccc;
+}
+
+</style>
+
+</head>
+    <body>
+    	<header id="masthead">
+    		<div class="head-wrap">
+    			<span class="avatar-frame"><img src="{PortraitURL-128}" /></span>
+        		<h1><a href="/">{Title}</a></h1>
+        
+        		{block:Description}
+            		<p id="blog-description">{Description}</p>
+        		{/block:Description}
+			</div>
+			<div id="nav">
+				<a href="/archive"><i class="fa fa-clock-o"></i> Archive</a> <a href="/rss"><i class="fa fa-rss"></i> RSS</a> <a href="/ask"><i class="fa fa-comment"></i> ASK</a> <a href="/random"><i class="fa fa-random"></i> Random</a>
+				{block:HasPages}{block:Pages} <a href="{URL}"><i class="fa fa-plus"></i> {Label}</a>{/block:Pages}{/block:HasPages}
+				<div id="social">
+				{block:IfTwitterUsername}<a href="https://twitter.com/{text:Twitter Username}" target="_blank"><i class="fa fa-twitter"></i></a>{/block:IfTwitterUsername}
+				{block:IfInstagramUsername}<a href="https://instagram.com/{text:Instagram Username}" target="_blank"><i class="fa fa-instagram"></i></a>{/block:IfInstagramUsername}
+				{block:IfGithubUsername}<a href="https://github.com/{text:Github Username}" target="_blank"><i class="fa fa-github-alt"></i></a>{/block:IfGithubUsername}
+
+				</div>
+			</div>
+		</header>
+        
+		
+	<div id="content">
+        <div id="posts">
+            {block:Posts}
+            
+                {block:Text}
+                    <article class="post text">
+                        <div class="post-inner">
+                        {block:Title}
+                            <h3><a href="{Permalink}">{Title}</a></h3>
+                        {/block:Title}
+
+                        		{Body}
+                        
+                        </div>
+                        
+                    </article>
+                {/block:Text}
+                
+                
+                
+                
+                
+
+                {block:Photo}
+                    <article class="post photo">
+                        
+                        <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                        
+                    </article>
+                {/block:Photo}
+
+
+
+
+
+
+                {block:Panorama}
+                    <article class="post panorama">
+                        {LinkOpenTag}
+                            <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+                        {LinkCloseTag}
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                        
+                    </article>
+                {/block:Panorama}
+                
+                
+                
+                
+                
+
+                {block:Photoset}
+                    <article class="post photoset">
+                        {Photoset-500}
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                        
+                    </article>
+                {/block:Photoset}
+                
+                
+                
+                
+
+                {block:Quote}
+                    <article class="post quote">
+                        <i class="fa fa-quote-left"></i>
+                        	<p>{Quote}</p>
+                        <i class="fa fa-quote-right"></i>
+
+                        {block:Source}
+                            <div class="source"><i class="fa fa-pencil"></i> {Source}</div>
+                        {/block:Source}
+                        
+                    </article>
+                {/block:Quote}
+                
+                
+                
+                
+
+                {block:Link}
+                    <article class="post link">
+                       <i class="fa fa-external-link"></i> <a href="{URL}" class="link" {Target}>{Name}</a>
+
+                        {block:Description}
+                            <div class="description">{Description}</div>
+                        {/block:Description}
+                        
+                    </article>
+                {/block:Link}
+                
+                
+
+                {block:Chat}
+                    <article class="post chat">
+                        {block:Title}
+                            <h3><a href="{Permalink}">{Title}</a></h3>
+                        {/block:Title}
+
+                        <ul class="chat">
+                            {block:Lines}
+                                <li class="{Alt} user_{UserNumber}">
+                                    {block:Label}
+                                        <span class="label">{Label}</span>
+                                    {/block:Label}
+
+                                    {Line}
+                                </li>
+                            {/block:Lines}
+                        </ul>
+                        
+                    </article>
+                {/block:Chat}
+
+                {block:Video}
+                    <article class="post video">
+                        <p class="videop">{Video-700}</p>
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                        
+                    </article>
+                {/block:Video}
+                
+                
+                
+
+                {block:Audio}
+                    <article class="post audio">
+                        {AudioPlayerBlack}
+
+                        {block:Caption}
+                            <div class="caption">{Caption}</div>
+                        {/block:Caption}
+                    </div>
+                {/block:Audio}
+                
+                
+                	<div class="date">
+                        {block:Date}
+                        <span class="date-info"><a href="{Permalink}" title="{DayOfWeek} {DayOfMonthWithZero} {Month} {Year}"><i class="fa fa-calendar"></i> {DayOfMonthWithZero}.{MonthNumberWithZero}.{Year} {24HourWithZero}:{Minutes}</a></span>
+                        <span class="notes-info"><a href="{Permalink}"><i class="fa fa-heart"></i> {NoteCountWithLabel}</a></span>
+                        {/block:Date}
+                        {block:HasTags}
+                        <span class="tags">
+                        		{block:Tags}
+                                		<a href="{TagURL}">#{Tag}</a>
+                        		{/block:Tags}
+                    	</span>
+                		{/block:HasTags}
+                    </div>
+                
+                
+            {/block:Posts}
+            
+            
+            {block:PostNotes}
+            <div id="notes-perma">
+            
+            	{PostNotes}
+            
+            </div>
+            {/block:PostNotes}
+            
+            
+        </div>
+    </div>
+
+
+        <footer id="blog-footer">
+        
+        	{block:PreviousPage}
+            <p class="prev-link">
+                <a href="{PreviousPage}"><i class="fa fa-arrow-left"></i> Previous</a>
+			</p>
+			{/block:PreviousPage}
+			
+			{block:NextPage}
+			<p class="next-link">
+                <a href="{NextPage}">Next <i class="fa fa-arrow-right"></i></a>
+			</p>
+			{/block:NextPage}
+			
+			<div id="made-by">Theme <a href="" target="_blank">Minimal Dream</a> by <a href="https://twitter.com/guidorossi" target="_blank">@guidorossi</a></div>
+			
+        </footer>
+        
+        
+        
+        
+    </body>
+</html>
